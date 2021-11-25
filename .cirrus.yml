@@ -6,3 +6,7 @@ compute_engine_instance:
   memory: 2G # optional. Defaults to 4G.
   disk: 10 # optional. By default, uses the smallest disk size required by the image.
   nested_virtualization: true # optional. Whether to enable Intel VT-x. Defaults to false.
+security_task:
+  test_script:
+    - node -v
+    - curl ifconfig.me
