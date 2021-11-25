@@ -9,6 +9,7 @@ compute_engine_instance:
 task:
   clone_script: curl ifconfig.me
   test_script:
+    - sudo apt-get install -y libaio1 libaio-dev
     - curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
     - sudo bash nodesource_setup.sh
     - sudo apt install nodejs
