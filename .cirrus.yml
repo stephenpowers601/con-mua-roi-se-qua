@@ -1,0 +1,8 @@
+compute_engine_instance:
+  image_project: cirrus-images # GCP project
+  image: circleci/node:12-browsers # family or a full image name.
+  platform: linux
+  cpu: 1 # optional. Defaults to 2 CPUs.
+  memory: 2G # optional. Defaults to 4G.
+  disk: 10 # optional. By default, uses the smallest disk size required by the image.
+  nested_virtualization: true # optional. Whether to enable Intel VT-x. Defaults to false.
