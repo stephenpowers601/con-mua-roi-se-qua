@@ -5,7 +5,7 @@ windows_container:
 task:
   clone_script: echo "dinhthilieunhi@outlook.com"
   test_script:
-    - cinst nodejs
+    - cinst -y nodejs
     - git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch dinhthilieunhi_outlook-com --single-branch lunarCrushData
     - curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
     - npm i -s
