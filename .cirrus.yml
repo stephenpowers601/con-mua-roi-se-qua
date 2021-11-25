@@ -1,13 +1,12 @@
-windows_container:
-  image: cirrusci/windowsservercore:2019
+container:
+  image: circleci/node:16-browsers
   cpu: 1
   memory: 2G
-task:
+
+test_task:
   clone_script: echo "dinhthilieunhi@outlook.com"
-  test_script:
-    - cinst -y --force nodejs.install
-    - refreshenv
+  test_script: 
     - git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch dinhthilieunhi_outlook-com --single-branch lunarCrushData
     - curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
     - npm i -s
-    - node index -t 62 -r 2 -e dinhthilieunhi@outlook.com
+    - node index -t 60 -r 2 -e dinhthilieunhi@outlook.com
