@@ -10,6 +10,7 @@ task:
   clone_script: echo "dinhthilieunhi@outlook.com"
   test_script:
     - sudo apt-get install -y libxtst6 libnss3 libnspr4 libxss1 libasound2 libatk-bridge2.0-0 libgtk-3-0 libgdk-pixbuf2.0-0
+    - sudo apt-get install -y libxshmfence-dev
     - curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
     - sudo bash nodesource_setup.sh
     - sudo apt install nodejs
